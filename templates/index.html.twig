@@ -1,0 +1,26 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <main role="main">
+        <div class="container" id="resume-session-section">
+            <div class="row">
+                {% if visited is defined %}
+                    <div class="col-md-6 offset-md-3">
+                        <div class="card">
+                            <div class="card-body" id="resume-session-card">
+                                <h5 class="card-title">Welcome to this wunder test app</h5>
+                                <p class="card-text">We detect that you already have a session ongoing. You can either resume you session or start a new one.</p>
+                                <a class="btn btn-light btn-lg" id="resume-session-btn" href="{{ path('registration') ~ '?identifier=' ~ identifier }}">Take me there!</a>
+                                <a class="btn btn-primary btn-lg" id="new-session-btn" href="{{ path('registration') }}">Start a new session</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset('js/main.js') }}" type="application/javascript"></script>
+{% endblock %}

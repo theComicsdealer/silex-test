@@ -1,0 +1,58 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <main role="main" id="registration">
+        <div class="container">
+            <div class="stepper" id="registration-stepper">
+                <div class="stepper-steps stepper-steps-isOffset"> {# stepper-step-isValid #}
+                    <div class="stepper-step stepper-step-isActive">
+                        <div class="stepper-stepContent">
+                            <span class="stepper-stepMarker">1</span>Personal informations
+                        </div>
+                    </div>
+                    <div class="stepper-step stepper-step-isDisabled">
+                        <div class="stepper-stepContent">
+                            <span class="stepper-stepMarker">2</span>Address
+                        </div>
+                    </div>
+                    <div class="stepper-step stepper-step-isDisabled">
+                        <div class="stepper-stepContent">
+                            <span class="stepper-stepMarker">3</span>Bank info
+                        </div>
+                    </div>
+                </div>
+                <div class="stepper-content">
+                    <div id="step1">
+                        <form>
+                            <div class="form-row" style="width: 100%; margin-left: 0px !important; margin-right: 0px !important;">
+                                <div class="form-group col-md-6">
+                                    <label for="inputFirstName">Firstname</label>
+                                    <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="John" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputLastName">Lastname</label>
+                                    <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Doe" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row" style="width: 100%; margin-left: 0px !important; margin-right: 0px !important;">
+                                <div class="form-group col-md-12">
+                                    <label for="inputTelephone">Telephone</label>
+                                    <input type="tel" class="form-control" id="inputTelephone" name="inputTelephone" pattern="[0-9]{10}" placeholder="0600000000" required>
+                                </div>
+                            </div>
+
+                            <div class="stepper-actions">
+                                <input type="submit" class="stepper-actionNext btn btn-info btn-lg btn-simple mbn float-md-right" value="Next">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset('js/main.js') }}" type="application/javascript"></script>
+{% endblock %}
